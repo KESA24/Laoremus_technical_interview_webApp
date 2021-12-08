@@ -380,6 +380,28 @@
         padding-bottom: 5px;
       }
     }
+#farmers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#farmers td, #farmers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#farmers tr:nth-child(even){background-color: #f2f2f2;}
+
+#farmers tr:hover {background-color: #ddd;}
+
+#farmers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
   </style>
 </head>
 
@@ -421,7 +443,7 @@
   </div>
   <div>
   <h2>Registered Farmers</h2>
-  <table>
+  <table id="farmers">
     {% for farmer in farmers reversed %}
     <tr>
       <th>Full Names</th>
@@ -430,7 +452,7 @@
       <th>Number of Cows</th>
     </tr>
     <tr>
-      <td>{{farmer.name}}</td>
+      <td>{{farmer.names}}</td>
       <td>{{farmer.phone}}</td>
       <td>{{farmer.village}}</td>
       <td>{{farmer.cows}}</td>
