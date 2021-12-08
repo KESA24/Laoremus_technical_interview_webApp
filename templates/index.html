@@ -5,11 +5,7 @@
   <title>Diary APP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      margin: 0;
-      min-width: 250px;
-    }
-
+    
     /* Include the padding and border in an element's total width and height */
     * {
       box-sizing: border-box;
@@ -112,14 +108,14 @@
     .addBtn {
       padding: 10px;
       width: 25%;
-      background: #d9d9d9;
-      color: #555;
-      float: left;
+      background: #329ba8;
+      color: white;
+      float: center;
       text-align: center;
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
-      border-radius: 0;
+      border-radius: 5;
     }
 
     .addBtn:hover {
@@ -152,7 +148,7 @@
       position: absolute;
       margin: 0;
       font-size: 40px;
-      color: #fff;
+      color: black;
       z-index: 2;
       line-height: 83px;
     }
@@ -180,13 +176,18 @@
 
     .banner {
       position: relative;
-      height: 300px;
+      height: 60px;
       background-color: #329ba8;
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+    }
+
+    .banner > h1{
+      color: white;
+      font-size: 30px;
     }
 
     .banner::after {
@@ -338,6 +339,7 @@
     .btn-block {
       margin-top: 10px;
       text-align: center;
+    
     }
 
     button {
@@ -390,7 +392,7 @@
     <div class="banner">
       <h1>New Member Registration</h1>
     </div>
-    <div class="colums">
+      <div class="colums">
       <div class="item">
         <label for="names"> FullName<span>*</span></label>
         <input id="names" type="text" name="names" required />
@@ -416,8 +418,9 @@
       <button type="submit" class="addBtn">Register Farmer</button>
     </div>
   </form>
-
-  <!-- <h1>Registered Farmers</h1>
+  </div>
+  <div>
+  <h2>Registered Farmers</h2>
   <table>
     {% for farmer in farmers reversed %}
     <tr>
@@ -433,7 +436,8 @@
       <td>{{farmer.cows}}</td>
     </tr>
     {% endfor %}
-  </table> -->
+  </table>
+  </div>
   </body>
 
 </html>
