@@ -263,31 +263,59 @@ html,
   <h2 style="margin:5px">AKATONGORE FARMER'S COOPERATIVE</h2>
 </div>
 <div class="testbox">
-  <form action="/" method='POST'>
+  <form action="/record" method='POST'>
     {% csrf_token %}
     <div class="banner">
-      <h1>New Member Registration</h1>
+      <h1>Record Milk</h1>
     </div>
       <div class="colums">
       <div class="item">
-        <label for="names"> FullName<span>*</span></label>
-        <input id="names" type="text" name="names" required />
+        <label for="date">Date of Delivery<span>*</span></label>
+        <input id="date" type="date" name="date" required />
       </div>
       <div class="item">
-        <label for="phone">PhoneNumber<span>*</span></label>
-        <input id="phone" type="tel" name="phone" required />
+        <label for="time">Time of Delivery<span>*</span></label>
+        <input id="time" type="time" name="time" required />
       </div>
       <div class="item">
-        <label for="village">Village<span>*</span></label>
-        <input id="village" type="text" name="village" required />
+        <label for="amount">Amount of milk in litres<span>*</span></label>
+        <input id="amount" type="number" name="amount" required />
       </div>
       <div class="item">
-        <label for="nin">National Identification Number<span>*</span></label>
-        <input id="nin" type="text" name="nin" required />
+        <h4 for="taste">Milk Taste<span>*</span></label>
+        <select>
+            <option value=""></option>
+            <option value="1">High Quality</option>
+            <option value="2">Average</option>
+            <option value="3">Below Average</option>
+          </select>
       </div>
       <div class="item">
-        <label for="cows">Number of Dairy Cows<span>*</span></label>
-        <input id="cows" type="number" name="cows" required />
+        <h4 for="taste">Milk Smell<span>*</span></h4>
+        <select>
+            <option value=""></option>
+            <option value="1">High Quality</option>
+            <option value="2">Average</option>
+            <option value="3">Below Average</option>
+          </select>
+      </div>
+      <div class="item">
+        <h4 for="taste">Mode of Delivery<span>*</span></h4>
+        <select>
+            <option value=""></option>
+            <option value="1">High Quality</option>
+            <option value="2">Average</option>
+            <option value="3">Below Average</option>
+          </select>
+      </div>
+      <div class="item">
+        <h4 for="taste">Level of Adulteration<span>*</span></h4>
+        <select>
+            <option value=""></option>
+            <option value="1">None</option>
+            <option value="2">Low</option>
+            <option value="3">High</option>
+          </select>
       </div>
     </div>
     <div class="btn-block">
@@ -312,7 +340,7 @@ html,
       <td>{{farmer.phone}}</td>
       <td>{{farmer.village}}</td>
       <td>{{farmer.cows}}</td>
-      <td><button>Add Delivery</button></td>
+      <td><button href="{% url 'record' %}">Add Delivery</button></td>
       <td><button>View Farmer</button></td>
     </tr>
     {% endfor %}
